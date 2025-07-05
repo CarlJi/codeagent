@@ -33,7 +33,7 @@ func New(workspace *models.Workspace, cfg *config.Config) (Code, error) {
 		return NewClaudeDocker(workspace, cfg)
 	case ProviderGemini:
 		if cfg.UseDocker {
-			return NewGeminiDocker(workspace, cfg)
+			return NewGemini(workspace, cfg)
 		}
 		return NewGeminiLocal(workspace, cfg)
 	default:
